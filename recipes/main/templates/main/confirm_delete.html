@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Удалить рецепт{% endblock %}
+
+{% block menustyle1 %}link-secondary{% endblock %}
+{% block menustyle2 %}link-secondary{% endblock %}
+
+{% block content %}
+    <h1>Удаление рецепта</h1>
+    <form method="POST" action="">
+        <h3>Вы действительно хотите удалить рецепт?</h3>
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Да, удалить рецепт</button>
+        <a href="/" class="btn btn-info">Нет, передумал!</a>
+    </form>
+{% endblock %}

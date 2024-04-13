@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавить рецепт{% endblock %}
+
+{% block menustyle1 %}link-secondary{% endblock %}
+{% block menustyle2 %}link-secondary{% endblock %}
+
+{% block content %}
+    <h1>Добавление рецепта</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.description }}<br>
+        {{ form.ingredients }}<br>
+        {{ form.instructions }}<br>
+        {{ form.cook_time }}
+        <label for="cook_time">Время приготовления в мин</label>
+        <p></p>
+        {{ form.tags }}<br>
+        {{ form.photo }}<br>
+        {{ error }}
+        <button class="btn btn-success" type="submit">Добавить рецепт</button>
+    </form>
+{% endblock %}

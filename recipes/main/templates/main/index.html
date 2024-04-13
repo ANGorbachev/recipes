@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block menustyle1 %}link-body-emphasis{% endblock %}
+{% block menustyle2 %}link-secondary{% endblock %}
+
+{% block header_image %}
+    <img src="/static/main/img/header_pic.png" class="justify-content-center main-image" alt="">
+{% endblock %}
+
+{% block content %}
+    <h1>Список рецептов</h1>
+    <p>Список рецептов на все случаи жизни:</p>
+    {% include "main/meal_list.html" %}
+{% endblock %}

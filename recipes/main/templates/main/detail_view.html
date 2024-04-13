@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавить рецепт{% endblock %}
+
+{% block menustyle1 %}link-secondary{% endblock %}
+{% block menustyle2 %}link-secondary{% endblock %}
+
+{% block content %}
+    <div class="detail-view">
+        <h1>{{ recipe.title }}</h1>
+        <p>{{ recipe.description }}</p>
+        <h3>Список ингредиентов</h3>
+        <p>{{ recipe.ingredients }}</p>
+        <h3>Инструкция по приготовлению</h3>
+        <p>{{ recipe.instructions }}</p>
+        <p><strong>Время приготовления:</strong> {{ recipe.cook_time }} мин</p>
+        <p><strong>Тэги:</strong> {{ recipe.tags }}</p>
+        <img src="/{{ recipe.photo }}" class="img-detail" alt="No Photo">
+        <a href="{% url 'update' recipe.id %}" class="btn btn-info">Редактировать</a>
+        <a href="{% url 'delete' recipe.id %}" class="btn btn-danger">Удалить</a>
+    </div>
+
+{% endblock %}
